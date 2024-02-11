@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hi Love!</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+<style>
+
+body {
+    background-color: #fadde1;
+    font-family: Comfortaa, sans-serif;
+}
+
+.button-container button {
+    margin: 0 10px;
+    background-color: #ffe5ec;
+    border: groove;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.Top {
+    font-family: Comfortaa, sans-serif;
+    text-align: center;
+    color: #ff87ab;
+    margin: 30px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-container button {
+    margin: 0 10px;
+    color: #f4acb7;
+}
+
+p {
+    font-family: Comfortaa, sans-serif;
+    color: #ff87ab;
+}
+
+.button-container button:hover {
+    background-color: #ff87ab;
+}
+
+.gif1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.gif1 img {
+    width: 200px;
+    height: auto;
+}
+</style>
+</head>
+<body>
+
+<h1 class="Top">Will you be my Valentine?</h1>
+<p align="center" color="#ffc4d6">HIHI &#128513;</p>
+
+<div class="gif1">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnhrZGY5dHE4Mndza2VuY294eGY3eGZscnBtbDl4YzBiOXl1Y3ZwZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5dUllWbKVlaqmMTvHb/giphy.gif">
+</div>
+
+<div class="button-container" align="center">
+    <button onclick="redirectTo('yes')">Yes</button>
+    <button id="noButton" onclick="redirectTo('no')">No</button>
+</div>
+
+<div id="yesSection" style="display:none;" align="center">
+    <h2>Yes Section</h2>
+    <p>This is the section for "Yes" choice.</p>
+</div>
+
+<div id="noSection" style="display:none;" align="center">
+    <h2>No Section</h2>
+    <p id="noMessage">This is the section for "No" choice.</p>
+</div>
+
+<script>
+function redirectTo(choice) {
+    if (choice === 'yes') {
+        window.location.href = 'https://drive.google.com/file/d/1vmYZt1LE665VUDQ7HuXLUG31wKJMWquW/view?usp=sharing'; // Change 'input_page.html' to the URL of your input page
+    } else if (choice === 'no') {
+        document.getElementById('yesSection').style.display = 'none';
+        document.getElementById('noSection').style.display = 'block';
+        // Randomly change position of "No" button
+        var button = document.getElementById('noButton');
+        button.style.position = 'absolute';
+        button.style.left = Math.random() * (window.innerWidth - button.offsetWidth) + 'px';
+        button.style.top = Math.random() * (window.innerHeight - button.offsetHeight) + 'px';
+
+        var messages = ["Hey don't do that!", "ISHH!!", "HEYYYYYYY", "Edi waggg, emee"];
+        var randomIndex = Math.floor(Math.random() * messages.length);
+        document.getElementById('noMessage').innerText = messages[randomIndex];
+    }
+}
+</script>
+
+</body>
+</html>
